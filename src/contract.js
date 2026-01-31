@@ -1,8 +1,8 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 
 /**
  * Contract Interaction Script - Call any contract function
- * Usage: bun src/contract.js <chain> <address> <functionSig> [args...] [--value <eth>]
+ * Usage: node src/contract.js <chain> <address> <functionSig> [args...] [--value <eth>]
  */
 
 import { parseEther, parseAbi, isAddress, encodeFunctionData, formatEther } from 'viem';
@@ -29,7 +29,7 @@ function showHelp() {
   console.log(`
 EVM Contract Interaction
 
-Usage: bun src/contract.js [options] <chain> <address> <functionSig> [args...] [--value <eth>]
+Usage: node src/contract.js [options] <chain> <address> <functionSig> [args...] [--value <eth>]
 
 Arguments:
   chain          Chain name (base, ethereum, polygon, arbitrum, optimism)
@@ -45,17 +45,17 @@ Options:
 
 Examples:
   # Read operations (view/pure functions)
-  bun src/contract.js base 0x833589fcd... "balanceOf(address)" 0x123...
-  bun src/contract.js ethereum 0x123... "symbol()"
-  bun src/contract.js base 0x456... "allowance(address,address)" 0x111... 0x222...
+  node src/contract.js base 0x833589fcd... "balanceOf(address)" 0x123...
+  node src/contract.js ethereum 0x123... "symbol()"
+  node src/contract.js base 0x456... "allowance(address,address)" 0x111... 0x222...
   
   # Write operations (state-changing functions)
-  bun src/contract.js base 0x833589fcd... "transfer(address,uint256)" 0x123... 1000000
-  bun src/contract.js base 0x456... "approve(address,uint256)" 0x123... 1000000000 --yes
+  node src/contract.js base 0x833589fcd... "transfer(address,uint256)" 0x123... 1000000
+  node src/contract.js base 0x456... "approve(address,uint256)" 0x123... 1000000000 --yes
   
   # Payable functions
-  bun src/contract.js ethereum 0x789... "deposit()" --value 0.1
-  bun src/contract.js base 0x456... "mint(address)" 0x123... --value 0.01 --yes
+  node src/contract.js ethereum 0x789... "deposit()" --value 0.1
+  node src/contract.js base 0x456... "mint(address)" 0x123... --value 0.01 --yes
 `);
 }
 

@@ -31,57 +31,57 @@ This skill provides a complete EVM wallet implementation with support for:
 
 ```bash
 # 1. Generate wallet
-bun src/setup.js
+node src/setup.js
 
 # 2. Check balance (should be 0)
-bun src/balance.js base
+node src/balance.js base
 
 # 3. Fund your wallet by sending ETH to the address
 # 4. Check balance again
-bun src/balance.js base
+node src/balance.js base
 ```
 
 ## Scripts
 
 ### Setup
 ```bash
-bun src/setup.js                    # Generate new wallet
-bun src/setup.js --force            # Overwrite existing wallet
-bun src/setup.js --json             # JSON output
+node src/setup.js                    # Generate new wallet
+node src/setup.js --force            # Overwrite existing wallet
+node src/setup.js --json             # JSON output
 ```
 
 ### Balance Checking
 ```bash
-bun src/balance.js base                           # ETH balance on Base
-bun src/balance.js ethereum 0x833589fcd6edb...    # USDC balance on Ethereum
-bun src/balance.js --all                          # All chains, native tokens
-bun src/balance.js --all --json                   # JSON output
+node src/balance.js base                           # ETH balance on Base
+node src/balance.js ethereum 0x833589fcd6edb...    # USDC balance on Ethereum
+node src/balance.js --all                          # All chains, native tokens
+node src/balance.js --all --json                   # JSON output
 ```
 
 ### Transfers
 ```bash
 # Native ETH transfers
-bun src/transfer.js base 0x123... 0.01
+node src/transfer.js base 0x123... 0.01
 
 # ERC20 token transfers
-bun src/transfer.js base 0x123... 100 0x833589fcd6edb...
+node src/transfer.js base 0x123... 100 0x833589fcd6edb...
 
 # Skip confirmation
-bun src/transfer.js base 0x123... 0.01 --yes
+node src/transfer.js base 0x123... 0.01 --yes
 ```
 
 ### Contract Interactions
 ```bash
 # Read operations (view/pure functions)
-bun src/contract.js base 0x833589fcd... "balanceOf(address)" 0x123...
-bun src/contract.js ethereum 0x123... "symbol()"
+node src/contract.js base 0x833589fcd... "balanceOf(address)" 0x123...
+node src/contract.js ethereum 0x123... "symbol()"
 
 # Write operations (state-changing)
-bun src/contract.js base 0x833589fcd... "transfer(address,uint256)" 0x123... 1000000
-bun src/contract.js base 0x456... "approve(address,uint256)" 0x123... 1000000000
+node src/contract.js base 0x833589fcd... "transfer(address,uint256)" 0x123... 1000000
+node src/contract.js base 0x456... "approve(address,uint256)" 0x123... 1000000000
 
 # Payable functions
-bun src/contract.js ethereum 0x789... "deposit()" --value 0.1
+node src/contract.js ethereum 0x789... "deposit()" --value 0.1
 ```
 
 ## Security Features
@@ -120,7 +120,7 @@ bun src/contract.js ethereum 0x789... "deposit()" --value 0.1
 
 ## Technical Stack
 
-- **Runtime:** Bun
+- **Runtime:** Node.js
 - **EVM Library:** viem (modern, lightweight, typed)
 - **Chains:** Public RPC endpoints with automatic failover
 - **Gas:** Smart EIP-1559 estimation
@@ -141,28 +141,28 @@ bun src/contract.js ethereum 0x789... "deposit()" --value 0.1
 ### Check Portfolio
 ```bash
 # Quick overview
-bun src/balance.js --all
+node src/balance.js --all
 
 # Specific token balances
-bun src/balance.js base 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913  # USDC on Base
+node src/balance.js base 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913  # USDC on Base
 ```
 
 ### Send Payment
 ```bash
 # Send 0.01 ETH on Base (cheapest fees)
-bun src/transfer.js base 0x123... 0.01
+node src/transfer.js base 0x123... 0.01
 
 # Send 100 USDC on Base
-bun src/transfer.js base 0x123... 100 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+node src/transfer.js base 0x123... 100 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
 ```
 
 ### DeFi Interactions
 ```bash
 # Approve USDC spending
-bun src/contract.js base 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913 "approve(address,uint256)" 0xSpender... 1000000000
+node src/contract.js base 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913 "approve(address,uint256)" 0xSpender... 1000000000
 
 # Check allowance
-bun src/contract.js base 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913 "allowance(address,address)" 0xOwner... 0xSpender...
+node src/contract.js base 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913 "allowance(address,address)" 0xOwner... 0xSpender...
 ```
 
 ---

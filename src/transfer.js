@@ -1,10 +1,10 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 
 /**
  * Transfer Script - Send ETH or ERC20 tokens
  * Usage: 
- *   bun src/transfer.js <chain> <to> <amount>                  # Send native ETH
- *   bun src/transfer.js <chain> <to> <amount> <tokenAddress>   # Send ERC20
+ *   node src/transfer.js <chain> <to> <amount>                  # Send native ETH
+ *   node src/transfer.js <chain> <to> <amount> <tokenAddress>   # Send ERC20
  */
 
 import { parseEther, parseUnits, formatEther, parseAbi, isAddress } from 'viem';
@@ -32,7 +32,7 @@ function showHelp() {
   console.log(`
 EVM Wallet Transfer
 
-Usage: bun src/transfer.js [options] <chain> <to> <amount> [tokenAddress]
+Usage: node src/transfer.js [options] <chain> <to> <amount> [tokenAddress]
 
 Arguments:
   chain          Chain name (base, ethereum, polygon, arbitrum, optimism)
@@ -46,9 +46,9 @@ Options:
   --help         Show this help message
 
 Examples:
-  bun src/transfer.js base 0x123... 0.01                    # Send 0.01 ETH on Base
-  bun src/transfer.js base 0x123... 100 0x833589fcd...      # Send 100 USDC on Base
-  bun src/transfer.js ethereum 0x123... 0.5 --yes          # Send 0.5 ETH, skip confirmation
+  node src/transfer.js base 0x123... 0.01                    # Send 0.01 ETH on Base
+  node src/transfer.js base 0x123... 100 0x833589fcd...      # Send 100 USDC on Base
+  node src/transfer.js ethereum 0x123... 0.5 --yes          # Send 0.5 ETH, skip confirmation
 `);
 }
 

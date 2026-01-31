@@ -1,4 +1,4 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 
 /**
  * Setup Script - Generate new wallet
@@ -19,7 +19,7 @@ function showHelp() {
   console.log(`
 EVM Wallet Setup
 
-Usage: bun src/setup.js [options]
+Usage: node src/setup.js [options]
 
 Options:
   --force    Overwrite existing wallet
@@ -27,8 +27,8 @@ Options:
   --help     Show this help message
 
 Examples:
-  bun src/setup.js           # Generate new wallet
-  bun src/setup.js --force   # Overwrite existing wallet
+  node src/setup.js           # Generate new wallet
+  node src/setup.js --force   # Overwrite existing wallet
 `);
 }
 
@@ -90,7 +90,7 @@ async function main() {
       
       console.log('\nNext steps:');
       console.log('1. Fund your wallet by sending ETH to the address above');
-      console.log('2. Check balance: bun src/balance.js base');
+      console.log('2. Check balance: node src/balance.js base');
       console.log('3. Start with small amounts on Base (lowest gas fees)');
     }
     

@@ -4,10 +4,10 @@
   "description": "Self-sovereign EVM wallet for Clawdbot",
   "type": "module",
   "scripts": {
-    "setup": "bun src/setup.js",
-    "balance": "bun src/balance.js",
-    "transfer": "bun src/transfer.js",
-    "contract": "bun src/contract.js"
+    "setup": "node src/setup.js",
+    "balance": "node src/balance.js",
+    "transfer": "node src/transfer.js",
+    "contract": "node src/contract.js"
   },
   "dependencies": {
     "viem": "^2.21.54"

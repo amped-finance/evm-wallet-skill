@@ -1,11 +1,11 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 
 /**
  * Balance Script - Check ETH and token balances
  * Usage: 
- *   bun src/balance.js <chain>                    # Native token balance
- *   bun src/balance.js <chain> <tokenAddress>     # ERC20 balance
- *   bun src/balance.js --all                      # All chains, native tokens
+ *   node src/balance.js <chain>                    # Native token balance
+ *   node src/balance.js <chain> <tokenAddress>     # ERC20 balance
+ *   node src/balance.js --all                      # All chains, native tokens
  */
 
 import { formatEther, parseAbi } from 'viem';
@@ -31,7 +31,7 @@ function showHelp() {
   console.log(`
 EVM Wallet Balance Checker
 
-Usage: bun src/balance.js [options] <chain> [tokenAddress]
+Usage: node src/balance.js [options] <chain> [tokenAddress]
 
 Arguments:
   chain          Chain name (${getSupportedChains().join(', ')})
@@ -43,10 +43,10 @@ Options:
   --help         Show this help message
 
 Examples:
-  bun src/balance.js base                           # ETH balance on Base
-  bun src/balance.js ethereum 0x833589fcd6edb...    # USDC balance on Ethereum
-  bun src/balance.js --all                          # All chains, native tokens
-  bun src/balance.js --all --json                   # All chains, JSON output
+  node src/balance.js base                           # ETH balance on Base
+  node src/balance.js ethereum 0x833589fcd6edb...    # USDC balance on Ethereum
+  node src/balance.js --all                          # All chains, native tokens
+  node src/balance.js --all --json                   # All chains, JSON output
 `);
 }
 

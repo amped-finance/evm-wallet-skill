@@ -19,36 +19,36 @@ Or clone directly:
 ```bash
 git clone https://github.com/surfer77/evm-wallet-skill.git
 cd evm-wallet-skill
-bun install
+npm install
 ```
 
 ## Quick Start
 
 ```bash
 # Generate a wallet
-bun src/setup.js
+node src/setup.js
 
 # Check your balance
-bun src/balance.js base
+node src/balance.js base
 
 # Send ETH
-bun src/transfer.js base 0x... 0.01
+node src/transfer.js base 0x... 0.01
 
 # Interact with any contract
-bun src/contract.js base 0x... "balanceOf(address)" 0x...
+node src/contract.js base 0x... "balanceOf(address)" 0x...
 ```
 
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| `bun src/setup.js` | Generate a new wallet and store it securely |
-| `bun src/balance.js <chain>` | Check native token balance |
-| `bun src/balance.js <chain> <token>` | Check ERC20 token balance |
-| `bun src/balance.js --all` | Check balance across all chains |
-| `bun src/transfer.js <chain> <to> <amount>` | Send native token (ETH/POL) |
-| `bun src/transfer.js <chain> <to> <amount> <token>` | Send ERC20 token |
-| `bun src/contract.js <chain> <addr> <fn> [args...]` | Call any contract function |
+| `node src/setup.js` | Generate a new wallet and store it securely |
+| `node src/balance.js <chain>` | Check native token balance |
+| `node src/balance.js <chain> <token>` | Check ERC20 token balance |
+| `node src/balance.js --all` | Check balance across all chains |
+| `node src/transfer.js <chain> <to> <amount>` | Send native token (ETH/POL) |
+| `node src/transfer.js <chain> <to> <amount> <token>` | Send ERC20 token |
+| `node src/contract.js <chain> <addr> <fn> [args...]` | Call any contract function |
 
 All commands support `--json` for machine-readable output.
 
@@ -119,7 +119,7 @@ User request
 
 ## Tech Stack
 
-- **Runtime:** [Bun](https://bun.sh)
+- **Runtime:** [Node.js](https://nodejs.org)
 - **EVM library:** [viem](https://viem.sh) — lightweight, typed, modern
 - **RPCs:** Public endpoints (no API keys)
 
