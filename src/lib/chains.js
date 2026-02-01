@@ -113,6 +113,24 @@ export const chains = {
     // See: https://docs.megaeth.com/realtime-api
     // EIP-7966: https://ethereum-magicians.org/t/eip-7966-eth-sendrawtransactionsync-method/24640
     syncRpc: "eth_sendRawTransactionSync"
+  },
+  
+  lightlink: {
+    chainId: 1890,
+    name: "LightLink",
+    nativeToken: {
+      symbol: "ETH",
+      decimals: 18
+    },
+    explorer: {
+      name: "LightLink Explorer",
+      url: "https://phoenix.lightlink.io"
+    },
+    rpcs: [
+      "https://replicator.phoenix.lightlink.io/rpc/v1",
+      "https://1890.rpc.thirdweb.com",
+      "https://endpoints.omniatech.io/v1/lightlink/phoenix/public"
+    ]
   }
 };
 

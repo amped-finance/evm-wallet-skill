@@ -63,6 +63,7 @@ All commands support `--json` for machine-readable output.
 | Arbitrum | ETH | 42161 | [arbiscan.io](https://arbiscan.io) |
 | Optimism | ETH | 10 | [optimistic.etherscan.io](https://optimistic.etherscan.io) |
 | MegaETH | ETH | 4326 | [mega.etherscan.io](https://mega.etherscan.io) |
+| LightLink | ETH | 1890 | [phoenix.lightlink.io](https://phoenix.lightlink.io) |
 
 ## Architecture
 
