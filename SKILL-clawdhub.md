@@ -1,6 +1,6 @@
 ---
 name: evm-wallet-skill
-description: Self-sovereign EVM wallet for AI agents. Use when the user wants to create a crypto wallet, check balances, send ETH or ERC20 tokens, swap tokens, or interact with smart contracts. Supports Base, Ethereum, Polygon, Arbitrum, and Optimism. Private keys stored locally — no cloud custody, no API keys required.
+description: Self-sovereign EVM wallet for AI agents. Use when the user wants to create a crypto wallet, check balances, send ETH or ERC20 tokens, swap tokens, or interact with smart contracts. Supports Base, Ethereum, Polygon, Arbitrum, Optimism, MegaETH, and LightLink. Private keys stored locally — no cloud custody, no API keys required.
 metadata: {"clawdbot":{"emoji":"💰","homepage":"https://github.com/surfer77/evm-wallet-skill","requires":{"bins":["node","git"]}}}
 ---
 
@@ -149,6 +149,8 @@ cd "$SKILL_DIR" && git pull && npm install
 | polygon | POL | Low fees |
 | arbitrum | ETH | Low fees |
 | optimism | ETH | Low fees |
+| megaeth | ETH | Ultra-fast transactions |
+| lightlink | ETH | Enterprise L2, low fees |
 
 **Always recommend Base** for first-time users (lowest gas fees).
 

@@ -36,7 +36,7 @@ EVM Wallet Transfer
 Usage: node src/transfer.js [options] <chain> <to> <amount> [tokenAddress]
 
 Arguments:
-  chain          Chain name (base, ethereum, polygon, arbitrum, optimism)
+  chain          Chain name (base, ethereum, polygon, arbitrum, optimism, megaeth, lightlink)
   to             Recipient address
   amount         Amount to send
   tokenAddress   ERC20 token contract address (optional, for token transfers)

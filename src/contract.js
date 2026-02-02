@@ -33,7 +33,7 @@ EVM Contract Interaction
 Usage: node src/contract.js [options] <chain> <address> <functionSig> [args...] [--value <eth>]
 
 Arguments:
-  chain          Chain name (base, ethereum, polygon, arbitrum, optimism)
+  chain          Chain name (base, ethereum, polygon, arbitrum, optimism, megaeth, lightlink)
   address        Contract address
   functionSig    Function signature (e.g., "balanceOf(address)" or "transfer(address,uint256)")
   args           Function arguments (space-separated)
