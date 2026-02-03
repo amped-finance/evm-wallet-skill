@@ -61,9 +61,9 @@ const builtInChains = {
       url: "https://polygonscan.com"
     },
     rpcs: [
-      "https://polygon.llamarpc.com",
-      "https://polygon.publicnode.com",
-      "https://rpc.ankr.com/polygon"
+      "https://polygon-bor-rpc.publicnode.com",
+      "https://polygon.drpc.org",
+      "https://1rpc.io/matic"
     ]
   },
   
