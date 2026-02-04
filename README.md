@@ -156,3 +156,38 @@ node src/contract.js lightlink 0x... "transfer(address,uint256)" 0x... 1000 --ga
 ## License
 
 MIT
+
+## Custom RPC URLs
+
+By default, the skill uses public RPCs. For better reliability and speed, you can configure your own RPC endpoints (e.g., Alchemy, Infura, QuickNode).
+
+Add a `rpcUrls` object to your `~/.evm-wallet.json`:
+
+```json
+{
+  "privateKey": "0x...",
+  "rpcUrls": {
+    "ethereum": "https://eth-mainnet.g.alchemy.com/v2/YOUR_KEY",
+    "polygon": "https://polygon-mainnet.g.alchemy.com/v2/YOUR_KEY",
+    "base": "https://base-mainnet.g.alchemy.com/v2/YOUR_KEY",
+    "arbitrum": "https://arb-mainnet.g.alchemy.com/v2/YOUR_KEY"
+  }
+}
+```
+
+**Priority order for RPC resolution:**
+1. Custom RPCs in `~/.evm-wallet.json` (highest priority)
+2. Environment variable: `EVM_RPC_URLS_JSON`
+3. Built-in public defaults
+
+You only need to specify RPCs for chains you want to override — others will fall back to defaults.
+
+### Recommended Providers
+
+| Provider | Free Tier | Notes |
+|----------|-----------|-------|
+| [Alchemy](https://www.alchemy.com/) | 300M compute units/mo | Best reliability |
+| [Infura](https://www.infura.io/) | 100K requests/day | Good coverage |
+| [QuickNode](https://www.quicknode.com/) | 10M credits/mo | Fast |
+| [PublicNode](https://publicnode.com/) | Unlimited | Free, no signup |
+
